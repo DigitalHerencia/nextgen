@@ -1,7 +1,7 @@
 import Image from "next/image"
 // Example from shadcn/ui
-import { Button } from "@shadcn/ui/button"
-import { FaSearch, FaImage, FaHeart, FaVideo, FaRegNewspaper } from "react-icons/fa"
+import { Button } from "@components/ui/button"
+import { Heart, Newspaper, Search, FileVideo } from "lucide-react"
 
 export default function ToolsDashboard() {
   // Simulate data
@@ -32,19 +32,19 @@ export default function ToolsDashboard() {
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4 text-pink-400 text-sm text-center">
               <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-                <FaImage size={20} />
+                <FileVideo size={20} />
                 <span>629 Photos</span>
               </div>
               <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-                <FaHeart size={20} />
+                <Heart size={20} />
                 <span>5.9K Likes</span>
               </div>
               <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-                <FaVideo size={20} />
+                <FileVideo size={20} />
                 <span>141 Videos</span>
               </div>
               <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-                <FaRegNewspaper size={20} />
+                <Newspaper size={20} />
                 <span>131 Posts</span>
               </div>
             </div>
