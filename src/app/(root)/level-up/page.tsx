@@ -26,7 +26,7 @@ export default function AdditionalRevenuePage() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Card: Content Creation */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-          <Card className="bg-white/10 backdrop-blur-sm">
+          <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-xl font-bold">
                 Content Creation
@@ -46,7 +46,7 @@ export default function AdditionalRevenuePage() {
 
         {/* Card: Social Media Campaigns */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-          <Card className="bg-white/10 backdrop-blur-sm">
+          <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-xl font-bold">
                 Social Media Campaigns
@@ -66,7 +66,7 @@ export default function AdditionalRevenuePage() {
 
         {/* Card: Brand Partnerships */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-          <Card className="bg-white/10 backdrop-blur-sm">
+          <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-xl font-bold">
                 Brand Partnerships
@@ -86,7 +86,7 @@ export default function AdditionalRevenuePage() {
 
         {/* Card: Revenue Sharing */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-          <Card className="bg-white/10 backdrop-blur-sm">
+          <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-xl font-bold">
                 Revenue Sharing
