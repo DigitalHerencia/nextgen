@@ -13,7 +13,7 @@ export default function ToolsDashboard() {
 
   // For the search input
   const [searchInput, setSearchInput] = React.useState("")
-  const [searchResult, setSearchResult] = React.useState("")
+  const [searchResult, setSearchResult] = React.useState<React.ReactElement | null>(null);
 
   function handleSearch() {
     if (searchInput === "@Kazzandra") {
