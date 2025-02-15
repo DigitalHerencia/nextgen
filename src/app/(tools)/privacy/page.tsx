@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image from 'next/image'
 // Example from shadcn/ui
-import { Button } from "@components/ui/button"
-import { Heart, Newspaper, Search, FileVideo } from "lucide-react"
+import { Button } from '@/components/ui/button'
+import { Heart, Newspaper, Search, FileVideo } from 'lucide-react'
 
 export default function ToolsDashboard() {
   // Simulate data
