@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import {
   Card,
@@ -13,18 +14,23 @@ import { Separator } from '@/components/ui/separator'
 export default function AdditionalRevenuePage() {
   return (
     <div className="mx-auto mt-8 max-w-7xl px-6 pb-16">
-      <div className="mb-8 text-center">
+      {/* HEADER SECTION */}
+      <header className="mb-8 text-center">
         <h1 className="text-4xl font-bold">Additional Revenue Streams</h1>
         <p className="mt-2 text-gray-300">
           Explore more ways to monetize your content and expand your brand.
         </p>
-      </div>
+      </header>
 
+      {/* REVENUE STREAMS GRID */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {/* Card: Content Creation */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
           <Card className="bg-white/10 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl font-bold">Content Creation</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                Content Creation
+              </CardTitle>
               <Separator className="my-2" />
               <CardDescription className="text-gray-300">
                 Video editing, graphic design, and photography
@@ -38,10 +44,13 @@ export default function AdditionalRevenuePage() {
           </Card>
         </motion.div>
 
+        {/* Card: Social Media Campaigns */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
           <Card className="bg-white/10 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl font-bold">Social Media Campaigns</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                Social Media Campaigns
+              </CardTitle>
               <Separator className="my-2" />
               <CardDescription className="text-gray-300">
                 Paid ad management (Instagram, Reddit)
@@ -55,10 +64,13 @@ export default function AdditionalRevenuePage() {
           </Card>
         </motion.div>
 
+        {/* Card: Brand Partnerships */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
           <Card className="bg-white/10 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl font-bold">Brand Partnerships</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                Brand Partnerships
+              </CardTitle>
               <Separator className="my-2" />
               <CardDescription className="text-gray-300">
                 Commission-based revenue model
@@ -72,10 +84,13 @@ export default function AdditionalRevenuePage() {
           </Card>
         </motion.div>
 
+        {/* Card: Revenue Sharing */}
         <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
           <Card className="bg-white/10 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl font-bold">Revenue Sharing</CardTitle>
+              <CardTitle className="text-xl font-bold">
+                Revenue Sharing
+              </CardTitle>
               <Separator className="my-2" />
               <CardDescription className="text-gray-300">
                 20%-30% cut of creator earnings
