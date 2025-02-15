@@ -6,7 +6,7 @@ import { Heart, Newspaper, Search, FileVideo } from 'lucide-react'
 export default function ToolsDashboard() {
   // Simulate data
   const currentUser = {
-    name: "Alex Morgan - Talent Agent"
+    name: "Alex Morgan - Talent Agent",
     src: 'https://raw.githubusercontent.com/DigitalHerencia/NextGenManagementAgency/refs/heads/master/public/assets/example%20profile%20pic.jpg'
   }
 
