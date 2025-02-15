@@ -7,7 +7,7 @@ export default function ToolsDashboard() {
   // Simulate data
   const currentUser = {
     name: "Alex Morgan - Talent Agent",
-    src: "/assets/example-profile-pic.jpg",
+    src: "/assets'https://raw.githubusercontent.com/DigitalHerencia/NextGenManagementAgency/refs/heads/master/public/assets/example%20profile%20pic.jpg',
   }
 
   // For the search input
@@ -19,7 +19,7 @@ export default function ToolsDashboard() {
       setSearchResult(
         <div className="w-full flex items-center bg-sidebar rounded-lg shadow-lg p-6">
           <Image
-            src="/assets/kazzandraavatar.jpg"
+            src="https://raw.githubusercontent.com/DigitalHerencia/NextGenManagementAgency/refs/heads/master/public/assets/kazzandraavatar.jpg"
             alt="Kazzandra Profile"
             width={208}  // w-52
             height={208} // h-52
@@ -72,7 +72,7 @@ export default function ToolsDashboard() {
         <nav className="flex flex-col space-y-4">
           {/* Active or default */}
           <button className="flex items-center space-x-3 px-4 py-2 rounded-lg bg-accent text-black hover:bg-accentHover transition">
-            <FaSearch />
+            <Search />
             <span>ScoutHub</span>
           </button>
           {/* Inactive nav items */}
