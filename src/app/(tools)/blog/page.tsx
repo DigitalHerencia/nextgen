@@ -1,19 +1,18 @@
-import Image from 'next/image'
-import { Heart, Newspaper, FileVideo } from 'lucide-react'
-import React from 'react';
+import Image from "next/image"
+import { Heart, Newspaper, FileVideo } from "lucide-react"
+
 
 export default function ToolsDashboard() {
   // Current user info remains the same
   const currentUser = {
     name: "Alex Morgan - Talent Agent",
-    src: 'https://raw.githubusercontent.com/DigitalHerencia/NextGenManagementAgency/refs/heads/master/public/assets/example%20profile%20pic.jpg'
+    src: "/assets/example profile pic.jpg"
   };
 
-  // Directly defined result content (formerly conditionally rendered via search)
   const resultContent = (
     <div className="w-full flex items-center bg-sidebar rounded-lg shadow-lg p-6">
       <Image
-        src="https://raw.githubusercontent.com/DigitalHerencia/NextGenManagementAgency/refs/heads/master/public/assets/kazzandraavatar.jpg"
+        src="/assets/kazzandraavatar.jpg"
         alt="Kazzandra Profile"
         width={208}  // w-52
         height={208} // h-52

@@ -1,72 +1,104 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 import {
   NavigationMenu,
-  NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
+  NavigationMenuItem,
   NavigationMenuLink,
-} from '@/components/ui/navigation-menu' // Adjust import path
-import { Button } from '@/components/ui/button'
+} from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button"
+import { Menu as MenuIcon, X as CloseIcon } from "lucide-react"
+import { motion } from "framer-motion"
+
+const Buttons = motion( Button );
+
 
 export default function TopNav() {
+  const [ menuOpen, setMenuOpen ] = React.useState( false )
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-black/80 px-6 py-4 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 z-50 w-full md:bg-black/60 md:backdrop-blur-md px-6 py-2 bg-black backdrop-blur-none">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <Image
             src="/assets/Main_Black.png"
             alt="NextGen Management Logo"
-            width={48}
-            height={48}
+            width={ 125 }
+            height={ 125 }
             priority
           />
-          <span className="text-2xl text-white">NextGen Management</span>
         </div>
 
-        {/* Navigation Menu */}
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-white">Go Home</NavigationMenuLink>
-                </Link>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+        {/* Mobile Menu Toggle */ }
+        <Button
+          onClick={ () => setMenuOpen( !menuOpen ) }
+          className="flex items-center justify-center rounded-lg p-2 text-input focus:outline-none md:hidden"
+          aria-label="Toggle Menu"
+        >
+          { menuOpen ? <CloseIcon size={ 20 } /> : <MenuIcon size={ 20 } /> }
+        </Button>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Pricing</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <Link href="/pricing" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-white">View Plans</NavigationMenuLink>
-                </Link>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+        {/* Nav + Auth Actions (Desktop & Mobile) */ }
+        <div
+          className={ `${ menuOpen ? "block" : "hidden"
+            } fixed top-[62] left-0 w-full z-0 bg-card p-4 md:static md:block md:w-auto md:bg-transparent md:p-0` }
+        >
+          <nav className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-6">
+            {/* Navigation Menu */ }
+            <NavigationMenu>
+              <NavigationMenuList className="flex flex-col space-y-2 md:flex-row md:items-center md:space-y-0 md:space-x-6">
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/"
+                      className="text-input text-base hover:text-primary"
+                    >
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <Link href="/additional-revenue" legacyBehavior passHref>
-                  <NavigationMenuLink className="text-white">Revenue Streams</NavigationMenuLink>
-                </Link>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/pricing"
+                      className="text-input text-base hover:text-primary"
+                    >
+                      Pricing
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-        {/* Auth Actions (Clerk or custom) */}
-        <div className="flex items-center space-x-2">
-          <Button variant="outline" className="border-white/50 text-white hover:bg-white/10">
-            Login
-          </Button>
-          <Button className="bg-[#ff00ff] text-black hover:opacity-90">Sign Up</Button>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/services"
+                      className="text-input text-base hover:text-primary"
+                    >
+                      Services
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            {/* Auth Actions */ }
+            <div className="mt-4 flex items-center space-x-2 md:mt-0">
+              <Buttons
+                variant="default"
+                className="text-secondary rounded-lg text-lg hover:bg-secondary hover:text-primary"
+              >
+                Login
+              </Buttons>
+              <Buttons className="bg-secondary text-background rounded-lg text-lg hover:bg-primary hover:text-secondary">
+                Sign Up
+              </Buttons>
+            </div>
+          </nav>
         </div>
       </div>
     </header>

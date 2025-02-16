@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   Card,
   CardHeader,
@@ -13,56 +14,78 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import { TypographyH1, TypographyH2, TypographyP  } from '@/components/ui/typography'
+import { TypographyH1, TypographyH2, TypographyP, TypographyH3, TypographyH4 } from '@/components/ui/typography'
+
+const MotionButton = motion( Button );
 
 export default function PricingPage() {
   return (
-    <div className="bg-transparent text-white mx-auto mt-8 max-w-7xl px-6 pb-16">
+    <div className="bg-transparent text-primary-foreground mx-auto mt-10 max-w-7xl px-6 pb-16">
       {/* Title & Subtitle */}
-      <div className="mb-8 text-center">
-        <TypographyH1 className="text-5xl font-bold tracking-wide">Subscription Plans &amp; Pricing</TypographyH1>
-        <TypographyP className="mt-2 text-gray-300">
+      <div className="mb-4 text-center">
+        <TypographyH1 className="text-5xl font-extrabold tracking-wide">
+          Subscription Plans &amp; Pricing
+        </TypographyH1>
+        <TypographyP className="text-secondary">
           Choose a plan that fits your goals. Upgrade or cancel anytime.
         </TypographyP>
       </div>
 
       {/* Tabs for Monthly vs Yearly */}
       <Tabs defaultValue="monthly" className="w-full">
-        <TabsList className="mx-auto mb-8 flex justify-center bg-transparent">
-          <TabsTrigger value="monthly">Monthly</TabsTrigger>
-          <TabsTrigger value="yearly">Yearly</TabsTrigger>
+        <TabsList className="w-36 bg-card mx-auto mb-4 flex justify-center">
+          <TabsTrigger
+            className="rounded-lg data-[state=active]:bg-gradient"
+            value="monthly"
+          >
+            Monthly
+          </TabsTrigger>
+          <TabsTrigger
+            className="rounded-lg data-[state=active]:bg-gradient"
+            value="yearly"
+          >
+            Yearly
+          </TabsTrigger>
         </TabsList>
 
         {/* Monthly Plans */}
         <TabsContent value="monthly">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* Basic Plan */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className=" bg-black/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-56 text-2xl font-bold text-[#00ffff]">
-                    Basic
-                   <Badge variant="default" className="bg-[#00ffff] text-[#0a0a0a]">Starter</Badge>
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Basic</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Starter
+                    </Badge>
                   </CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                    Perfect for emerging creators looking for essential tools.
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Perfect for emerging creators looking for essential tools.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyH2 className="mt-4 text-4xl text-[#ff00ff] font-extrabold">$50</TypographyH2>
-                  <TypographyP className="text-sm text-gray-400">per month</TypographyP>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-300">
+                  <TypographyH2 className="mt-4 tracking-wide text-primary text-4xl font-extrabold">
+                    $19.99
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    per month
+                  </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
                     <li>• Basic analytics &amp; scheduling tools</li>
                     <li>• Community support resources</li>
                     <li>• Email support</li>
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#00ffff] text-[black] hover:bg-[#ff00ff]">
+                  <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
                     Sign Up Now
                   </Button>
                 </CardFooter>
@@ -70,32 +93,40 @@ export default function PricingPage() {
             </motion.div>
 
             {/* Pro Plan */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-56 text-2xl font-bold text-[#00ffff]">
-                    Pro
-                   <Badge variant="default" className="bg-[#00ffff] text-[#0a0a0a]">Popular</Badge>
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Pro</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Popular
+                    </Badge>
                   </CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                    Perfect for emerging creators looking for essential tools.
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Perfect for emerging creators looking for essential tools.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyH2 className="mt-4 text-4xl text-[#ff00ff] font-extrabold">$50</TypographyH2>
-                  <TypographyP className="text-sm text-gray-400">per month</TypographyP>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-300">
+                  <TypographyH2 className="mt-4 text-4xl tracking-wide text-primary font-extrabold">
+                    $49.99
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    per month
+                  </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
                     <li>• Advanced analytics (revenue trends, engagement)</li>
                     <li>• Personalized growth consultations &amp; content review</li>
                     <li>• Premium editing &amp; marketing tools</li>
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#00ffff] text-[black] hover:bg-[#ff00ff]">
+                  <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
                     Sign Up Now
                   </Button>
                 </CardFooter>
@@ -103,32 +134,40 @@ export default function PricingPage() {
             </motion.div>
 
             {/* Enterprise Plan */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-[#0a0a0a]/50 backdrop-blur-sm">
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-56 text-2xl font-bold text-[#00ffff]">
-                    Enterprise
-                   <Badge variant="default" className="bg-[#00ffff] text-[#0a0a0a]">Custom</Badge>
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Enterprise</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Custom
+                    </Badge>
                   </CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                  Scaled solutions for agencies &amp; multiple creators.
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Scaled solutions for agencies &amp; multiple creators.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyH2 className="mt-4 text-4xl text-[#ff00ff] font-extrabold">Custom</TypographyH2>
-                  <TypographyP className="text-sm text-gray-400">Contact for pricing</TypographyP>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-300">
+                  <TypographyH2 className="mt-4 text-4xl tracking-wide text-primary font-extrabold">
+                    Custom
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    Contact for pricing
+                  </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
                     <li>• Dedicated account managers</li>
                     <li>• Advanced growth strategies &amp; analytics</li>
                     <li>• Flexible, volume-based pricing</li>
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#00ffff] text-[black] hover:bg-[#ff00ff]">
+                  <Button className="w-full bg-secondary text-lg  text-black hover:bg-primary rounded-lg">
                     Contact Us
                   </Button>
                 </CardFooter>
@@ -140,78 +179,123 @@ export default function PricingPage() {
         {/* Yearly Plans */}
         <TabsContent value="yearly">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {/* Basic Yearly */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-white/10 backdrop-blur-sm">
+            {/* Basic Plan */ }
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className=" bg-black/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Basic</CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                    $540 / year
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Basic</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Starter
+                    </Badge>
+                  </CardTitle>
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Perfect for emerging creators looking for essential tools.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyP className="text-sm text-gray-400">
-                    Save 10% with annual billing.
+                  <TypographyH2 className="mt-4 tracking-wide text-primary text-4xl font-extrabold">
+                    $549.99
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    per month
                   </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
+                    <li>• Basic analytics &amp; scheduling tools</li>
+                    <li>• Community support resources</li>
+                    <li>• Email support</li>
+                  </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#00ffff] text-black hover:opacity-90">
-                    Sign Up
+                  <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
+                    Sign Up Now
                   </Button>
                 </CardFooter>
               </Card>
             </motion.div>
 
-            {/* Pro Yearly */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-white/10 backdrop-blur-sm">
+            {/* Pro Plan */ }
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Pro</CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                    $1620 / year
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Pro</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Popular
+                    </Badge>
+                  </CardTitle>
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Perfect for emerging creators looking for essential tools.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyP className="text-sm text-gray-400">
-                    Save 10% with annual billing.
+                  <TypographyH2 className="mt-4 text-4xl tracking-wide text-primary font-extrabold">
+                    $1,599.99
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    per year
                   </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
+                    <li>• Advanced analytics (revenue trends, engagement)</li>
+                    <li>• Personalized growth consultations &amp; content review</li>
+                    <li>• Premium editing &amp; marketing tools</li>
+                  </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#ff00ff] text-black hover:opacity-90">
-                    Get Pro
+                  <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
+                    Sign Up Now
                   </Button>
                 </CardFooter>
               </Card>
             </motion.div>
 
-            {/* Enterprise Yearly */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="bg-white/10 backdrop-blur-sm">
+            {/* Enterprise Plan */ }
+            <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+              <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Enterprise</CardTitle>
-                  <Separator className="my-2" />
-                  <CardDescription className="text-gray-300">
-                    Custom / year
+                  <CardTitle className="flex items-center font-bold text-secondary">
+                    <TypographyH1 className="tracking-wide">Enterprise</TypographyH1>
+                    <Badge
+                      variant="default"
+                      className="bg-secondary text-background tracking-normal mb-2 ml-auto rounded-lg"
+                    >
+                      Custom
+                    </Badge>
+                  </CardTitle>
+                  <Separator className="my-2 border-b" />
+                  <CardDescription className="text-input">
+                    <TypographyH4 className="tracking-wide">
+                      Scaled solutions for agencies &amp; multiple creators.
+                    </TypographyH4>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TypographyP className="text-sm text-gray-400">
-                    Flexible pricing for agencies.
+                  <TypographyH2 className="mt-4 text-4xl tracking-wide text-primary font-extrabold">
+                    Custom
+                  </TypographyH2>
+                  <TypographyP className="text-sm text-secondary">
+                    Contact for pricing
                   </TypographyP>
+                  <ul className="mt-4 space-y-2 text-base text-input">
+                    <li>• Dedicated account managers</li>
+                    <li>• Advanced growth strategies &amp; analytics</li>
+                    <li>• Flexible, volume-based pricing</li>
+                  </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-[#00ffff] text-black hover:opacity-90">
+                  <Button className="w-full bg-secondary text-lg  text-black hover:bg-primary rounded-lg">
                     Contact Us
                   </Button>
                 </CardFooter>
@@ -222,13 +306,20 @@ export default function PricingPage() {
       </Tabs>
 
       {/* Typical add-on services, disclaimers, or CTA */}
-      <div className="mt-12 text-center">
-        <TypographyP className="text-gray-400">
-          Need custom services like video editing or ad campaigns?
-        </TypographyP>
-        <Button variant="outline" className="mt-4 border-white/50 text-white hover:bg-white/10">
+      <div className="mt-10 text-center">
+        <TypographyH3 className="text-input tracking-wide">
+          Need custom services like <span className='text-primary'>video editing</span>  or  <span className='text-secondary'>custom social media </span>ad campaigns?
+        </TypographyH3>
+        <Link href="/services">
+          <MotionButton
+            whileHover={ { scale: 1.1 } }
+            transition={ { type: "spring", stiffness: 300 } }
+            variant="outline"
+            className="mt-4 bg-primary text-lg rounded-lg border-primary text-white hover:bg-secondary hover:text-primary"
+          >
           View Our Services
-        </Button>
+          </MotionButton>
+        </Link>
       </div>
     </div>
   )
