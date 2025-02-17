@@ -40,10 +40,10 @@ export default function Home() {
         />
 
         {/* Text - More compact */ }
-        <TypographyH1 className="text-2xl text-foreground tracking-wide text-center md:text-4xl">
-          Take the <span className="text-primary">Next</span> Step to <span className="text-secondary">Elevate</span> Your <span className="text-primary">Career</span>
+        <TypographyH1 className="text-2xl text-foreground tracking-wide text-center md:text-5xl">
+          Take the <span className="text-primary">Next</span> Step <br /> to <span className="text-secondary">Elevate</span> Your <span className="text-primary">Career</span>
         </TypographyH1>
-        <TypographyP className="text-xl text-input text-center mx-6">
+        <TypographyP className="text-xl text-input text-center mx-4 max-w-3xl">
           Join a platform designed to streamline talent management, boost growth, and deliver outstanding results. Discover how we can help you grow your audience and maximize your potential.
         </TypographyP>
 

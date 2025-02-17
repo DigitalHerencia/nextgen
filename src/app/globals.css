@@ -40,6 +40,7 @@
     --sidebar-ring: #ff00ff;
     --gradient: linear-gradient(135deg, var(--accent), var(--accent-foreground));
     --radix-accordion-content-height: 0.5rem;
+    --font-bebas: 'Bebas Neue', sans-serif;
   
   }
 
@@ -79,7 +80,15 @@
     --sidebar-ring: #ff00ff;
     --gradient: linear-gradient(135deg, var(--accent), var(--accent-foreground));
     --radix-accordion-content-height: 0.5rem;
+    --font-bebas: 'Bebas Neue', sans-serif;
+    
   }
 }
 
+.bebas-font {
+  font-family: var(--font-bebas), sans-serif;
+}
 
+.background-image {
+  background-image: url("/assets/Shapes_Black.png");
+}

@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black/80 py-6 backdrop-blur-sm">
+    <footer className="fixed bottom-0 w-full bg-black/80 py-4 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between space-y-4 px-6 md:flex-row md:space-y-0">
         {/* Left: Mark & Copy */}
         <div className="flex items-center space-x-2">
@@ -21,12 +22,18 @@ export default function Footer() {
 
         {/* Right: Footer Links */}
         <div className="flex items-center space-x-4">
-          <a href="#" className="text-sm text-gray-300 hover:text-white">
+          <Link href="#" className="text-sm text-gray-300 hover:text-white">
             Contact
-          </a>
-          <a href="#" className="text-sm text-gray-300 hover:text-white">
+          </Link>
+          <Link href="#" className="text-sm text-gray-300 hover:text-white">
+            Docs
+          </Link>
+          <Link href="#" className="text-sm text-gray-300 hover:text-white">
             Privacy Policy
-          </a>
+          </Link>
+          <Link href="#" className="text-sm text-gray-300 hover:text-white">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>

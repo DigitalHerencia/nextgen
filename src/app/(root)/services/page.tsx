@@ -19,7 +19,7 @@ export default function RevenueAndToolsPage() {
       {/* PAGE HEADER */}
       <header className="mb-12 text-center">
         <TypographyH1 className="text-5xl font-extrabold tracking-wide">
-        next-level tools designed to empower digital creators 
+          <span className='text-secondary'>next-level</span> tools<br />designed to empower <span className='text-secondary'>digital creators</span>  
         </TypographyH1>
         <TypographyH4 className="mt-4 text-secondary tracking-wide">
           Explore more ways to monetize your content and leverage cutting-edge tools to streamline your workflow.
@@ -149,7 +149,7 @@ export default function RevenueAndToolsPage() {
                 <TypographyH2>Social<span className='text-secondary'>Boost</span></TypographyH2>
                 </CardTitle>
                 <CardDescription className="text-secondary text-xl">
-                  Elevate Your Social Presence
+                  Elevate Your Presence
                 </CardDescription>
               </CardHeader>
               <CardContent>
