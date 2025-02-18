@@ -1,5 +1,7 @@
 'use client'
 
+{ /* IMPORTS */ }
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
@@ -16,12 +18,18 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { TypographyH1, TypographyH2, TypographyP, TypographyH3, TypographyH4 } from '@/components/ui/typography'
 
+{ /* VARIABLES */ }
+
 const MotionButton = motion( Button );
+
+{ /* DEFAUL COMPONENT FUNCTION */ }
 
 export default function PricingPage() {
   return (
-    <div className="bg-transparent text-primary-foreground mx-auto mt-10 max-w-7xl px-6 pb-16">
-      {/* Title & Subtitle */}
+    <div className="bg-transparent text-primary-foreground mx-auto mt-24 max-w-7xl px-6 pb-16">
+      
+      {/* TITLE */}
+      
       <div className="mb-4 text-center">
         <TypographyH1 className="text-5xl font-extrabold tracking-wide">
           Subscription Plans &amp; Pricing
@@ -31,7 +39,8 @@ export default function PricingPage() {
         </TypographyP>
       </div>
 
-      {/* Tabs for Monthly vs Yearly */}
+      {/* TABS FOR MONTHLY VS YEARLY */}
+      
       <Tabs defaultValue="monthly" className="w-full">
         <TabsList className="w-36 bg-card mx-auto mb-4 flex justify-center">
           <TabsTrigger
@@ -48,12 +57,15 @@ export default function PricingPage() {
           </TabsTrigger>
         </TabsList>
 
-        {/* Monthly Plans */}
+        {/* MONTHLY PLANS */}
+        
         <TabsContent value="monthly">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {/* Basic Plan */}
+            
+            {/* BASIC PLAN */}
+            
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
-              <Card className=" bg-black/50 backdrop-blur-lg">
+              <Card className=" bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center font-bold text-secondary">
                     <TypographyH1 className="tracking-wide">Basic</TypographyH1>
@@ -92,7 +104,8 @@ export default function PricingPage() {
               </Card>
             </motion.div>
 
-            {/* Pro Plan */}
+            {/* PRO PLAN */}
+            
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
               <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
@@ -133,7 +146,8 @@ export default function PricingPage() {
               </Card>
             </motion.div>
 
-            {/* Enterprise Plan */}
+            {/* ENTERPRISE PLAN */}
+            
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
               <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
@@ -167,7 +181,7 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-secondary text-lg  text-black hover:bg-primary rounded-lg">
+                  <Button className="w-full bg-secondary text-lg  text-background hover:bg-primary rounded-lg">
                     Contact Us
                   </Button>
                 </CardFooter>
@@ -176,12 +190,14 @@ export default function PricingPage() {
           </div>
         </TabsContent>
 
-        {/* Yearly Plans */}
+        {/* YEARLY PLANS */}
         <TabsContent value="yearly">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {/* Basic Plan */ }
+            
+            {/* BASIC PLAN */ }
+            
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
-              <Card className=" bg-black/50 backdrop-blur-lg">
+              <Card className=" bg-background/50 backdrop-blur-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center font-bold text-secondary">
                     <TypographyH1 className="tracking-wide">Basic</TypographyH1>
@@ -220,7 +236,8 @@ export default function PricingPage() {
               </Card>
             </motion.div>
 
-            {/* Pro Plan */ }
+            {/* PRO PLAN */ }
+            
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
               <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
@@ -261,7 +278,7 @@ export default function PricingPage() {
               </Card>
             </motion.div>
 
-            {/* Enterprise Plan */ }
+            {/* ENTERPRISE PLAN */ }
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
               <Card className="bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
@@ -295,7 +312,7 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full bg-secondary text-lg  text-black hover:bg-primary rounded-lg">
+                  <Button className="w-full bg-secondary text-lg  text-background hover:bg-primary rounded-lg">
                     Contact Us
                   </Button>
                 </CardFooter>
@@ -305,7 +322,8 @@ export default function PricingPage() {
         </TabsContent>
       </Tabs>
 
-      {/* Typical add-on services, disclaimers, or CTA */}
+      {/* CTA */}
+      
       <div className="mt-10 text-center">
         <TypographyH3 className="text-input tracking-wide">
           Need custom services like <span className='text-primary'>video editing</span>  or  <span className='text-secondary'>custom social media </span>ad campaigns?
@@ -315,7 +333,7 @@ export default function PricingPage() {
             whileHover={ { scale: 1.1 } }
             transition={ { type: "spring", stiffness: 300 } }
             variant="outline"
-            className="mt-4 bg-primary text-lg rounded-lg border-primary text-white hover:bg-secondary hover:text-primary"
+            className="mt-4 bg-primary text-lg rounded-lg border-primary text-input hover:bg-secondary hover:text-primary"
           >
           View Our Services
           </MotionButton>

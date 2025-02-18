@@ -1,12 +1,10 @@
-{/* IMPORTS */ }
-
 import "../globals.css";
 import { Metadata } from "next";
 import { Bebas_Neue } from "next/font/google";
 import Footer from "@/components/shared/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import Header from "@/components/shared/Header";
+import TopNav from "@/components/shared/TopNav";
 
 {/* VARIABLES */ }
 
@@ -27,23 +25,23 @@ export default function RootLayout ( { children }: { children: React.ReactNode }
   return (
     <ClerkProvider appearance={ { baseTheme: dark } }>
       <html lang="en">
+      
+        {/* TOPBAR COMPONENT */ }
+      
+        <TopNav />
 
-        {/* HEADER COMPONENT*/ }
-
-        <Header />
-
-        {/* MAIN CONTENT */ }
-
-        <body className={ BebasNeue.className }>
-
+          {/* Main Content */ }
+    
+          <body className={ BebasNeue.className }>
+          
           <div className="min-h-screen w-full">
-
+          
             {/* BACKGROUND IMAGE */ }
-
+          
             <div className="fixed top-0 left-0 -z-10 h-full w-full bg-cover bg-center bg-no-repeat bg-fixed background-image" />
             { children }
           </div>
-
+          
           {/* FOOTER COMPONENT*/ }
 
           <Footer />

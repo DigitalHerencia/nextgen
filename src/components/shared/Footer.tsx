@@ -1,13 +1,22 @@
 'use client'
 
+{/* IMPORTS */ }
+
 import Image from 'next/image'
 import Link from 'next/link'
 
+{/* DEFAULT FUNCTION COMPONENT */ }
+
 export default function Footer() {
+
+  { /* MAIN RETURN */ }
+
   return (
-    <footer className="fixed bottom-0 w-full bg-black/80 py-4 backdrop-blur-sm">
+    <footer className="fixed bottom-0 w-full bg-background py-2 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between space-y-4 px-6 md:flex-row md:space-y-0">
-        {/* Left: Mark & Copy */}
+
+        {/* LEFT: MARK & COPY */ }
+
         <div className="flex items-center space-x-2">
           <Image
             src="/assets/Mark_Black.png"
@@ -20,19 +29,17 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Right: Footer Links */}
+        {/* RIGHT: FOOTER LINKS */ }
+
         <div className="flex items-center space-x-4">
-          <Link href="#" className="text-sm text-gray-300 hover:text-white">
-            Contact
-          </Link>
-          <Link href="#" className="text-sm text-gray-300 hover:text-white">
+          <Link href="#" className="text-sm text-input hover:text-primary">
             Docs
           </Link>
-          <Link href="#" className="text-sm text-gray-300 hover:text-white">
-            Privacy Policy
-          </Link>
-          <Link href="#" className="text-sm text-gray-300 hover:text-white">
+          <Link href="#" className="text-sm text-input hover:text-primary">
             Contact
+          </Link>
+          <Link href="#" className="text-sm text-input hover:text-primary">
+            Privacy Policy
           </Link>
         </div>
       </div>

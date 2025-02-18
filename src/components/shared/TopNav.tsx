@@ -15,14 +15,16 @@ import { motion } from "framer-motion"
 
 const Buttons = motion( Button );
 
-
 export default function TopNav() {
   const [ menuOpen, setMenuOpen ] = React.useState( false )
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full md:bg-black/60 md:backdrop-blur-md px-6 py-2 bg-black backdrop-blur-none">
+    <>
+      <div className="fixed top-0 left-0 z-50 w-full md:bg-background  px-6 py-2 bg-background">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
+
         {/* Logo */}
+
         <div className="flex items-center space-x-2">
           <Image
             src="/assets/Main_Black.png"
@@ -101,6 +103,7 @@ export default function TopNav() {
           </nav>
         </div>
       </div>
-    </header>
+      </div>
+    </>
   )
 }

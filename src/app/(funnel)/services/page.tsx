@@ -1,5 +1,7 @@
 'use client'
 
+{ /* IMPORTS */ }
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import {
@@ -13,23 +15,33 @@ import {
 import { Button } from '@/components/ui/button'
 import { TypographyH1, TypographyP, TypographyH4, TypographyH2 } from '@/components/ui/typography'
 
+{ /* DEFAULT COMPONENT FUNCTION */ }
+
 export default function RevenueAndToolsPage() {
+  
+  { /* MAIN RETURN */ }
+  
   return (
-    <div className="bg-transparent text-primary-foreground mx-auto mt-10 max-w-7xl px-6 pb-16">
-      {/* PAGE HEADER */}
-      <header className="mb-12 text-center">
+    <div className="bg-transparent text-primary-foreground mx-auto mt-24 max-w-7xl px-6 pb-16">
+      
+      {/* PAGE TITLE */}
+      
+      <div className="mb-12 text-center">
         <TypographyH1 className="text-5xl font-extrabold tracking-wide">
           <span className='text-secondary'>next-level</span> tools<br />designed to empower <span className='text-secondary'>digital creators</span>  
         </TypographyH1>
         <TypographyH4 className="mt-4 text-secondary tracking-wide">
           Explore more ways to monetize your content and leverage cutting-edge tools to streamline your workflow.
         </TypographyH4>
-      </header>
+      </div>
 
       {/* TOOLS SECTION */}
+      
       <section className="mb-12">
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-5">
+      
           {/* Tool 1: ScoutHub */}
+      
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg h-full">
               <CardHeader>
@@ -58,6 +70,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Tool 2: OnboardPro */}
+      
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg h-full">
               <CardHeader>
@@ -86,6 +99,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Tool 3: CreateFlow */}
+          
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg h-full">
               <CardHeader>
@@ -114,6 +128,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Tool 4: EngageMax */}
+          
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg h-full">
               <CardHeader>
@@ -142,6 +157,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Tool 5: SocialBoost */}
+          
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg h-full">
               <CardHeader>
@@ -172,12 +188,15 @@ export default function RevenueAndToolsPage() {
       </section>
 
       {/* ADD-ONS SECTION */}
+    
       <section className="mb-12">
         <TypographyH1 className="mb-6 text-4xl font-bold tracking-wide text-center text-input">
         Additional Revenue & Tools
         </TypographyH1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        
           {/* Add-on 1: Content Creation */}
+        
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg">
               <CardHeader>
@@ -206,6 +225,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Add-on 2: Social Media Campaigns */}
+          
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg">
               <CardHeader>
@@ -234,6 +254,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Add-on 3: Brand Partnerships */}
+        
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg">
               <CardHeader>
@@ -262,6 +283,7 @@ export default function RevenueAndToolsPage() {
           </motion.div>
 
           {/* Add-on 4: Revenue Sharing */}
+          
           <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
             <Card className="bg-black/50 backdrop-blur-lg">
               <CardHeader>
