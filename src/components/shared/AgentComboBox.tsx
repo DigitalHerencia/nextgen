@@ -24,27 +24,27 @@ const agents = [
   {
     value: "Alex Morgan",
     label: "Talent Agent",
-    avatar: "/assets/example-profile-pic.jpg",
+    avatar: "/agents/CarterPP.jpg",
   },
   {
     value: "Ivan Roman",
     label: "Tech Lead",
-    avatar: "/assets/kazzandraavatar.jpg",
+    avatar: "/talent/Kazzandra_Avatar.jpg",
   },
   {
     value: "Rafaella Silva",
     label: "Talent Manager",
-    avatar: "/assets/scarlettavatar.jpg",
+    avatar: "/agents/ReedPP.jpg",
   },
   {
     value: "Jessica Garcia",
     label: "Business Lead",
-    avatar: "/assets/content creator head shot.jpg",
+    avatar: "agents/ReedPP.jpg",
   },
   {
     value: "Reina Torres",
     label: "CEO",
-    avatar: "/assets/bts agent service demo.jpg",
+    avatar: "agents/ReedPP.jpg",
   },
 ]
 

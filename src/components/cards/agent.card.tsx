@@ -15,7 +15,7 @@ interface Agent {
 
 export function AgentCard({ agent }: { agent: Agent }) {
   return (
-    <Card className="rounded-lg p-4 bg-secondary-foreground text-secondary shadow-lg">
+    <Card className="p-4 text-input bg-popover">
       <CardHeader className="flex items-center gap-4">
         <Image src={agent.avatar} alt={agent.name} width={80} height={80} className="rounded-full border-2 border-secondary" />
         <div>

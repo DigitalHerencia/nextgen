@@ -14,7 +14,7 @@ interface Deal {
 
 export function DealCard({ deal }: { deal: Deal }) {
   return (
-    <Card className="rounded-lg p-4 bg-primary text-primary-foreground shadow-lg">
+    <Card className="p-4 text-input bg-transparent">
       <CardHeader>
         <TypographyH4 className="font-bold">Deal with {deal.brand}</TypographyH4>
       </CardHeader>

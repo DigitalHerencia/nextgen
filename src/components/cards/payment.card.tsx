@@ -12,7 +12,7 @@ interface Payment {
 
 export function PaymentCard({ payment }: { payment: Payment }) {
     return (
-      <Card className="rounded-lg p-4 bg-green-500 text-white shadow-lg">
+      <Card className="p-4 text-input bg-transparent">
         <CardHeader>
           <TypographyH4 className="font-bold">Payment #{payment.id}</TypographyH4>
         </CardHeader>

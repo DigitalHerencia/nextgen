@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import { TypographyH2 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
-import { AgentComboBox } from "@/components/shared/AgentComboBox";
 import { Users, BarChart3, Mail } from "lucide-react";
 import "@/app/globals.css";
 
@@ -14,31 +10,11 @@ const fanSegments = [
   { name: "Inactive Fans", count: 215, engagement: "Low" },
 ];
 
-const EngageMax = () => {
-  const [agent, setAgent] = useState({
-    value: "Alex Morgan",
-    label: "Talent Agent",
-    avatar: "/assets/example-profile-pic.jpg",
-  });
+const EngageMax = () =>
+{
 
   return (
-    <main className="flex-1 p-8 overflow-y-auto">
-      <header className="flex justify-between items-center pb-6">
-        <TypographyH2>
-          Engage<span className="text-primary">Max</span>
-        </TypographyH2>
-        <div className="flex items-center space-x-4">
-          <AgentComboBox selectedAgent={agent} onSelectAgent={setAgent} />
-          <Image
-            src={agent.avatar}
-            alt={`${agent.value} Avatar`}
-            width={48}
-            height={48}
-            className="rounded-full border-2 border-primary"
-          />
-        </div>
-      </header>
-
+    <main className="flex-1 p-8  h-[calc(100vh-8rem)] overflow-y-auto">
       <section className="mt-6">
         <h2 className="text-xl font-semibold mb-4">Fan Segments</h2>
         <ul className="space-y-4">

@@ -19,7 +19,7 @@ const SocialBoost = () => {
   const [agent, setAgent] = useState({
     value: "Alex Morgan",
     label: "Talent Agent",
-    avatar: "/assets/example-profile-pic.jpg",
+    avatar: "/talent/Scarlett_Avatar.jpg",
   });
 
   return (

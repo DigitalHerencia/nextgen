@@ -12,7 +12,7 @@ import { HandHeart, Repeat, UserRoundCheck, UserRoundPlus, UserRoundSearch } fro
 
 {/* VARIABLES */}
 
-const Buttons = motion( Button );
+const Buttons = motion.create( Button );
   
   {/* DEFAULT FUNCTION COMPONENT */}
   
@@ -24,7 +24,7 @@ const Buttons = motion( Button );
     const currentUser = {
       name: `Alex Morgan`,
       role: `Talent Agent`,
-      src: "/assets/example-profile-pic.jpg",
+      src: "/agents/CarterPP.jpg",
     }
 
   {/* MAIN RETURN */}

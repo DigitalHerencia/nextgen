@@ -11,7 +11,9 @@ interface Manager {
 
 export function ManagerCard({ manager }: { manager: Manager }) {
   return (
-    <Card className="rounded-lg p-4 bg-muted text-muted-foreground shadow-lg">
+    <Card className="p-4 text-input bg-transparent">
+
+
       <CardHeader className="flex items-center gap-4">
         <TypographyH4 className="font-bold">{manager.name}</TypographyH4>
       </CardHeader>

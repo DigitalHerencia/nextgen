@@ -1,77 +1,49 @@
 "use client";
 
-{/* IMPORTS */}
+/* IMPORTS */
+import React from "react";
 
-import { useState, useEffect } from "react";
-import Sidebar from "@/components/shared/SideBar";
-import OnboardPro from "@/components/tools/OnBoarderPro";
+
+/* TOOL COMPONENT IMPORTS */
+import ScoutHub from "@/components/tools/ScoutHub";
+import OnBoarderPro from "@/components/tools/OnBoarderPro";
 import CreateFlow from "@/components/tools/CreateFlow";
-import EngageMax from "@/components/tools/EngageMax";
 import SocialBoost from "@/components/tools/SocialBoost";
-import "@/app/globals.css";
+import EngageMax from "@/components/tools/EngageMax";
 
-{/* INTERFACE */}
+/* SHARED COMPONENTS */
+import SideBar from "@/components/shared/SideBar";
 
-interface Agent {
-  value: string;
-  label: string;
-  avatar: string;
-}
+/* VARIABLES */
 
-  {/* DEFAULT FUNCTION COMPONENT */}
+export default function ToolsDashboard() {
+  const [ menuOpen ] = React.useState( false );
 
-  export default function ToolsDashboard() {
-    
-    {/* STATE */}
-    
-    const [activeTool, setActiveTool] = useState("ScoutHub");
-    const [] = useState<Agent | null>({
-      value: "Alex Morgan",
-      label: "Talent Agent",
-      avatar: "/assets/example-profile-pic.jpg",
-    });
+  // Track which tool is selected
+  const [selectedTool, setSelectedTool] = React.useState("ScoutHub");
 
+  return (
+    <div className="flex min-h-screen backdrop-blur-sm text-input">
+      {/* SIDEBAR COMPONENT */ }
+      <SideBar selectedTool={ selectedTool } setSelectedTool={ setSelectedTool } />
 
-    useEffect(() => {
-      async function loadTalents() {
-        try {
-          
-        } catch (error) {
-          console.error("Error fetching talents:", error);
-        }
-      }
-      loadTalents();
-    }, []);
-
-    {/* RENDER ACTIVE TOOL */}
-    
-    const renderActiveTool = () => {
-      switch (activeTool) {
-        case "ScoutHub":
-        
-        case "OnboardPro":
-          return <OnboardPro />;
-        case "CreateFlow":
-          return <CreateFlow />;
-        case "EngageMax":
-          return <EngageMax />;
-        case "SocialBoost":
-          return <SocialBoost />;
-        default:
-          
-      }
-    };
-    
-    {/* MAIN RETURN */}
-
-    return (
-      <div className="flex min-h-screen overflow-hidden bg-transparent text-foreground">
-        <Sidebar activeTool={activeTool} setActiveTool={setActiveTool} />
-        <div className="flex-1 flex flex-col">
-          <main className="p-8 overflow-y-auto">{renderActiveTool()}</main>
+      {/* MAIN CONTENT AREA */}
+      <main className="p-8 overflow-y-clip relative w-full">
+        {/* TOOL RENDER CONTAINER */}
+        <div
+          className={`absolute bg-transparent overflow-hidden transition-all duration-300
+            top-[5rem]
+            ${menuOpen ? "left-[20rem]" : "left-[calc(20rem-20rem)]"}
+            right-0 bottom-0
+          `}
+        >
+          {selectedTool === "ScoutHub" && <ScoutHub />}
+          {selectedTool === "OnBoarderPro" && <OnBoarderPro />}
+          {selectedTool === "CreateFlow" && <CreateFlow />}
+          {selectedTool === "SocialBoost" && <SocialBoost />}
+          {selectedTool === "EngageMax" && <EngageMax />}
         </div>
-      </div>
-    );
-  };
-
-
+      </main>
+    </div>
+  );
+}

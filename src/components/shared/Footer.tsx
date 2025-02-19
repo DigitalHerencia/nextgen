@@ -19,12 +19,12 @@ export default function Footer() {
 
         <div className="flex items-center space-x-2">
           <Image
-            src="/assets/Mark_Black.png"
+            src="/branding/Mark_Black.png"
             alt="NGMA Mark"
             width={32}
             height={32}
           />
-          <span className="text-sm text-gray-300">
+          <span className="text-sm text-input">
             © {new Date().getFullYear()} NextGen Management Agency
           </span>
         </div>

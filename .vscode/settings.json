@@ -1,0 +1,8 @@
+{
+    "vs-code-prettier-eslint.prettierLast": true,
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "eslint.lintTask.enable": true,
+    "eslint.useFlatConfig": true,
+    "eslint.useESLintClass": true,
+    "eslint.debug": true
+}

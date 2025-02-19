@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button"
 import { Menu as MenuIcon, X as CloseIcon } from "lucide-react"
 import { motion } from "framer-motion"
 
-const Buttons = motion( Button );
+const Buttons = motion.create( Button );
 
 export default function TopNav() {
   const [ menuOpen, setMenuOpen ] = React.useState( false )
@@ -27,7 +27,7 @@ export default function TopNav() {
 
         <div className="flex items-center space-x-2">
           <Image
-            src="/assets/Main_Black.png"
+              src="/branding/Main_Black.png"
             alt="NextGen Management Logo"
             width={ 125 }
             height={ 125 }

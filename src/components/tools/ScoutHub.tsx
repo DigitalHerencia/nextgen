@@ -11,7 +11,7 @@ import "@/app/globals.css";
 const talent = {
   name: `Kazzandra`,
   category: `Influencer`,
-  avatar: `/assets/Kazzandra_Avatar.jpg`,
+  avatar: `/talent/Kazzandra_Avatar.jpg`,
   earnings: 10000,
   social_links: {
     instagram: true,
@@ -34,7 +34,7 @@ export default function ScoutHub ()
 
       <div className="w-full flex items-center bg-sidebar rounded-lg shadow-lg p-6">
         <Image
-          src={ talent.avatar || "/assets/example-profile-pic.jpg" }
+          src={ talent.avatar || "/talent/Goji_Avatar.jpg" }
           alt={ `${ talent.name } Profile` }
           width={ 208 }
           height={ 208 }

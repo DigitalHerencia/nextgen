@@ -29,7 +29,7 @@ export default function TopNav ()
         // TALENT CARD  
         <div className="flex items-center bg-sidebar b-border rounded-lg shadow-lg p-6">
           <Image
-            src="/assets/Kazzandra_Avatar.jpg"
+            src="/talent/Kazzandra_Avatar.jpg"
             alt="Kazzandra Profile"
             width={ 208 }  // w-52
             height={ 208 } // h-52
@@ -77,7 +77,7 @@ export default function TopNav ()
 
         <div className="flex items-center px-4 py-2">
           <Image
-            src="/assets/Main_Black.png"
+            src="/branding/Main_Black.png"
             alt="NextGen Management Logo"
             width={ 135 }
             height={ 135 }

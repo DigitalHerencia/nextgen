@@ -10,8 +10,8 @@ import "../globals.css";
 import { motion } from "framer-motion";
 
 
-const MotionButton = motion( Button );
-const MotionLink = motion( Link );
+const MotionButton = motion.create( Button );
+const MotionLink = motion.create( Link );
 
 export default function Home() {
   return (
@@ -19,10 +19,10 @@ export default function Home() {
       {/* Background */ }
       <div className="absolute inset-0">
         <Image
-          src="/assets/Shapes_Black.png"
+          src="/branding/Shapes_Black.png"
           alt="NextGen Management"
           fill
-          className="object-cover opacity-85"
+          className="object-cover opacity-95"
           priority
         />
       </div>
@@ -31,10 +31,10 @@ export default function Home() {
       <div className="relative z-10 w-full max-w-3xl text-center">
         {/* Logo - Reduced size */ }
         <Image
-          src="/assets/Main_Black.png"
+          src="/branding/Main_Black.png"
           alt="NextGen Management Logo"
-          width={ 300 }
-          height={ 300 }
+          width={ 450 }
+          height={ 450 }
           className="mx-auto mb-4"
           priority
         />
@@ -43,7 +43,7 @@ export default function Home() {
         <TypographyH1 className="text-2xl text-foreground tracking-wide text-center md:text-5xl">
           Take the <span className="text-primary">Next</span> Step <br /> to <span className="text-secondary">Elevate</span> Your <span className="text-primary">Career</span>
         </TypographyH1>
-        <TypographyP className="text-xl text-input text-center mx-4 max-w-3xl">
+        <TypographyP className="text-xl text-input text-center ml-24 mx-4 max-w-xl">
           Join a platform designed to streamline talent management, boost growth, and deliver outstanding results. Discover how we can help you grow your audience and maximize your potential.
         </TypographyP>
 

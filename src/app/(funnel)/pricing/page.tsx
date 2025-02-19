@@ -20,11 +20,15 @@ import { TypographyH1, TypographyH2, TypographyP, TypographyH3, TypographyH4 } f
 
 { /* VARIABLES */ }
 
-const MotionButton = motion( Button );
+const MotionButton = motion.create( Button );
 
-{ /* DEFAUL COMPONENT FUNCTION */ }
+{ /* DEFAULT COMPONENT FUNCTION */ }
 
-export default function PricingPage() {
+export default function PricingPage ()
+{
+
+  { /* MAIN RETURN */ }
+
   return (
     <div className="bg-transparent text-primary-foreground mx-auto mt-24 max-w-7xl px-6 pb-16">
       
@@ -197,7 +201,7 @@ export default function PricingPage() {
             {/* BASIC PLAN */ }
             
             <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
-              <Card className=" bg-background/50 backdrop-blur-lg">
+              <Card className=" bg-[#000000]/50 backdrop-blur-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center font-bold text-secondary">
                     <TypographyH1 className="tracking-wide">Basic</TypographyH1>

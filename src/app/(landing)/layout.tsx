@@ -11,23 +11,16 @@ export const metadata: Metadata = {
   description: 'Take your career to the next level',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-} )
+export default function RootLayout ( { children }: { children: React.ReactNode } )
 {
   return (
-    <ClerkProvider
-      appearance={ {
-        baseTheme: dark,
-      } }>
-      <html lang="en">
-        <body className={ BebasNeue.className }>
+    <html lang="en">
+      <head />
+      <body className={ BebasNeue.className }>
+        <ClerkProvider appearance={ { baseTheme: dark } }>
           { children }
-        </body>
-      </html>
-    </ClerkProvider>
-
-    );
-  }
+        </ClerkProvider>
+      </body>
+    </html>
+  );
+}

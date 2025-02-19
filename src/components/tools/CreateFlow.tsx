@@ -1,119 +1,161 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { TypographyH2 } from "@/components/ui/typography";
+
+// shadcn components
+import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { AgentComboBox } from "@/components/shared/AgentComboBox";
-import { Calendar } from "lucide-react";
-import "@/app/globals.css";
+import
+{
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import
+{
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/ui/tabs";
 
-const CreateFlow = () => {
-  const [agent, setAgent] = useState({
-    value: "Alex Morgan",
-    label: "Talent Agent",
-    avatar: "/assets/example-profile-pic.jpg",
-  });
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-  const [appointments, setAppointments] = useState<{
-    title: string;
-    time: string;
-    type: string;
-    date: Date;
-  }[]>([
-    { title: "Photoshoot", time: "10:00 AM", type: "Photography", date: new Date() },
-    { title: "Video Recording", time: "2:00 PM", type: "Video", date: new Date() },
-  ]);
-  const [appointmentDetails, setAppointmentDetails] = useState({ title: "", time: "", type: "" });
+// Utility for converting a DateRange to a Date (e.g. using the "from" value)
+import { dateRangeToDate } from "@/lib/utils";
+import type { DateRange } from "react-day-picker";
 
-  const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
-    setModalOpen(true);
-  };
+// Forms
+import { AgentForm } from "@/components/forms/agent.form";
+import { CampaignForm } from "@/components/forms/campaign.form";
+import { ContentForm } from "@/components/forms/content.form";
+import { DealForm } from "@/components/forms/deal.form";
+import { ManagerForm } from "@/components/forms/manager.form";
+import { PaymentForm } from "@/components/forms/payment.form";
+import { TalentForm } from "@/components/forms/talent.form";
 
-  const handleAppointmentSubmit = () => {
-    if (appointmentDetails.title && appointmentDetails.time && appointmentDetails.type) {
-      setAppointments([...appointments, { ...appointmentDetails, date: selectedDate }]);
-      setModalOpen(false);
-      setAppointmentDetails({ title: "", time: "", type: "" });
+// Cards for upcoming sessions
+// NOTE: Updated the import for DealCard in case it was misnamed.
+import { DealCard } from "@/components/cards/deal.card";
+import { ContentCard } from "@/components/cards/content.card";
+import { TalentCard } from "@/components/cards/talent.card";
+
+// Example avatar image
+const CarlaAvatar = {
+  src: "/talent/Carla_Avatar.jpg",
+};
+
+export default function CreateFlow ()
+{
+  const [ selectedDate, setSelectedDate ] = useState<Date>( new Date() );
+  const [ modalOpen, setModalOpen ] = useState( false );
+  const [ activeForm, setActiveForm ] = useState( "campaign" );
+
+  // Accepts either a Date or a DateRange.
+  const handleDateSelect = ( date: Date | DateRange | undefined ) =>
+  {
+    const selected = date instanceof Date ? date : dateRangeToDate( date );
+    if ( selected )
+    {
+      setSelectedDate( selected );
+      setModalOpen( true );
     }
   };
 
+  // Tabs config for scheduling forms
+  const formTabs = [
+    { value: "campaign", label: "Campaign", component: <CampaignForm /> },
+    { value: "content", label: "Content", component: <ContentForm /> },
+    { value: "agent", label: "Agent", component: <AgentForm /> },
+    { value: "deal", label: "Deal", component: <DealForm /> },
+    { value: "manager", label: "Manager", component: <ManagerForm /> },
+    { value: "payment", label: "Payment", component: <PaymentForm /> },
+    { value: "talent", label: "Talent", component: <TalentForm /> },
+  ];
+
   return (
-    <main className="flex-1 p-8 overflow-y-auto">
-      <header className="flex justify-between items-center pb-6">
-        <TypographyH2>
-          Create<span className="text-primary">Flow</span>
-        </TypographyH2>
-        <div className="flex items-center space-x-4">
-          <AgentComboBox selectedAgent={agent} onSelectAgent={setAgent} />
-          <Image
-            src={agent.avatar}
-            alt={`${agent.value} Avatar`}
-            width={48}
-            height={48}
-            className="rounded-full border-2 border-primary"
+    <div className="flex h-46 w-full overflow-y-auto p-8">
+      {/* Central container */ }
+      <div className="flex container gap-4">
+        {/* Calendar and upcoming sessions side by side or stacked */ }
+        <div className="bg-popover rounded-lg">
+          <Calendar
+            selected={ selectedDate }
+            onSelect={ handleDateSelect }
+            className="w-full"
+          />
+
+          {/* Upcoming Sessions */ }
+          <h2 className="text-2xl font-semibold mb-4">Upcoming Sessions</h2>
+
+          {/* Sample Cards */ }
+          <DealCard
+            deal={ {
+              brand: "Acme Corp",
+              talent: "Alice",
+              agent: "Bob",
+              offer_amount: 500,
+              status: "pending",
+            } }
+          />
+          <ContentCard
+            content={ {
+              id: 1,
+              type: "video",
+              engagement: "High",
+              campaign: "Summer Launch",
+            } }
+          />
+          <TalentCard
+            talent={ {
+              avatar: CarlaAvatar.src,
+              name: "Carla",
+              category: "Influencer",
+              bio: "Lifestyle content and brand collabs.",
+              earnings: 2000,
+              agent: "Daisy",
+              talentManager: "Edward",
+              social_links: {
+                instagram: "https://instagram.com/carla",
+                twitter: "https://twitter.com/carla",
+              },
+            } }
           />
         </div>
-      </header>
-
-      <section className="mt-6">
-        <h2 className="text-xl font-semibold mb-4">Content Creation Calendar</h2>
-        <div className="bg-popover p-4 rounded-lg">
-          <Calendar className="w-full text-popover-foreground" onClick={() => handleDateClick(new Date())} />
-        </div>
-
-        <h3 className="text-lg font-bold mt-6">At a Glance</h3>
-        <ul className="mt-4 space-y-2">
-          {appointments.map((appt, index) => (
-            <li key={index} className="bg-muted p-3 rounded-lg">
-              <p className="font-bold">{appt.title} ({appt.type})</p>
-              <p className="text-sm text-muted-foreground">{appt.time} on {appt.date.toDateString()}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-popover p-6 rounded-lg shadow-lg w-96">
-            <h3 className="text-xl font-semibold text-popover-foreground mb-4">Schedule Content for {selectedDate.toDateString()}</h3>
-            <input 
-              type="text" 
-              title="Content Title"
-              placeholder="Title" 
-              className="mb-4 w-full p-2 bg-input text-foreground rounded"
-              value={appointmentDetails.title}
-              onChange={(e) => setAppointmentDetails({ ...appointmentDetails, title: e.target.value })}
-            />
-            <input 
-              type="time"
-              title="Content Time" 
-              className="mb-4 w-full p-2 bg-input text-foreground rounded"
-              value={appointmentDetails.time}
-              onChange={(e) => setAppointmentDetails({ ...appointmentDetails, time: e.target.value })}
-            />
-            <select 
-              title="Content Type"
-              className="mb-4 w-full p-2 bg-input text-foreground rounded"
-              value={appointmentDetails.type}
-              onChange={(e) => setAppointmentDetails({ ...appointmentDetails, type: e.target.value })}
-            >
-              <option value="">Select Type</option>
-              <option value="Photography">Photography</option>
-              <option value="Video">Video</option>
-              <option value="Editing">Editing</option>
-            </select>
-            <div className="flex justify-end space-x-4">
-              <Button variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button>
-              <Button variant="default" className="bg-primary text-primary-foreground" onClick={handleAppointmentSubmit}>Save</Button>
-            </div>
-          </div>
-        </div>
-      )}
-    </main>
+      </div>
+      {/* Dialog (Modal) for Scheduling Forms */ }
+      <Dialog open={ modalOpen } onOpenChange={ setModalOpen }>
+        <DialogContent className="bg-popover text-foreground max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>
+              Schedule for { selectedDate.toDateString() }
+            </DialogTitle>
+          </DialogHeader>
+          <Tabs
+            value={ activeForm }
+            onValueChange={ ( val ) => setActiveForm( val ) }
+            className="mt-2"
+          >
+            <TabsList className="mb-4">
+              { formTabs.map( ( tab ) => (
+                <TabsTrigger key={ tab.value } value={ tab.value }>
+                  { tab.label }
+                </TabsTrigger>
+              ) ) }
+            </TabsList>
+            { formTabs.map( ( tab ) => (
+              <TabsContent key={ tab.value } value={ tab.value }>
+                { tab.component }
+              </TabsContent>
+            ) ) }
+          </Tabs>
+          <DialogFooter>
+            <Button variant="outline" onClick={ () => setModalOpen( false ) }>
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div>
   );
-};
-
-export default CreateFlow;
+}

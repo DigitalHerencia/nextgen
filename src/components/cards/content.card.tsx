@@ -10,7 +10,9 @@ interface Content {
 
 export function ContentCard({ content }: { content: Content }) {
     return (
-      <Card className="rounded-lg p-4 bg-blue-500 text-white shadow-lg">
+      <Card className="p-4 text-input bg-transparent">
+
+
         <CardHeader>
           <TypographyH4 className="font-bold">Content #{content.id}</TypographyH4>
         </CardHeader>
