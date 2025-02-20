@@ -5,39 +5,39 @@
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #fffeff;
-    --card: #181e2b;
-    --card-foreground: #fffeff;
-    --popover: #252d3a;
-    --popover-foreground: #ff00ff;
-    --primary: #ff00ff;
-    --primary-foreground: #000000;
-    --secondary: #00ffff;
-    --secondary-foreground: #000000;
-    --muted: #c2c2c2;
-    --muted-foreground: #fffeff;
-    --accent: #ff00ff;
-    --accent-foreground: #00ffff;
-    --destructive: #ff0000;
-    --destructive-foreground: #fffeff;
-    --border: #2a2b30;
-    --input: #fffeff;
-    --ring: #ff00ff;
+    --background: rgba(0, 0, 0, 1);
+    --foreground:rgba(255, 254, 255, 1);
+    --card:rgba(24, 30, 43, 0.8);
+    --card-foreground:rgba(255, 254, 255, 1);
+    --popover:rgba(37, 45, 58, 1);
+    --popover-foreground: rgba(255, 0, 255, 1);
+    --primary: rgba(255, 0, 255, 1);
+    --primary-foreground: rgba(0, 0, 0, 1);
+    --secondary:rgba(0, 255, 255, 1);
+    --secondary-foreground: rgba(0, 0, 0, 1);
+    --muted: rgba(194, 194, 194, 1);
+    --muted-foreground:rgba(255, 254, 255, 1);
+    --accent: rgba(255, 0, 255, 1);
+    --accent-foreground:rgba(0, 255, 255, 1);
+    --destructive: rgba(255, 0, 0, 1);
+    --destructive-foreground:rgba(255, 254, 255, 1);
+    --border:rgba(42, 43, 48, 1);
+    --input:rgba(255, 254, 255, 1);
+    --ring: rgba(255, 0, 255, 1);
     --radius: 0.5rem;
-    --chart-1: #ff00ff;
-    --chart-2: #00ffff;
-    --chart-3: #2a2b30;
-    --chart-4: #fffeff;
-    --chart-5: #000000;
-    --sidebar-background: #181e2b;
-    --sidebar-foreground: #fffeff;
-    --sidebar-primary: #ff00ff;
-    --sidebar-primary-foreground: #000000;
-    --sidebar-accent: #00ffff;
-    --sidebar-accent-foreground: #fffeff;
-    --sidebar-border: #2a2b30;
-    --sidebar-ring: #ff00ff;
+    --chart-1: rgba(255, 0, 255, 1);
+    --chart-2:rgba(0, 255, 255, 1);
+    --chart-3:rgba(42, 43, 48, 1);
+    --chart-4:rgba(255, 254, 255, 1);
+    --chart-5: rgba(0, 0, 0, 1);
+    --sidebar-background:rgba(24, 30, 43, 1);
+    --sidebar-foreground:rgba(255, 254, 255, 1);
+    --sidebar-primary: rgba(255, 0, 255, 1);
+    --sidebar-primary-foreground: rgba(0, 0, 0, 1);
+    --sidebar-accent:rgba(0, 255, 255, 1);
+    --sidebar-accent-foreground:rgba(255, 254, 255, 1);
+    --sidebar-border:rgba(42, 43, 48, 1);
+    --sidebar-ring: rgba(255, 0, 255, 1);
     --gradient: linear-gradient(135deg, var(--accent), var(--accent-foreground));
     --radix-accordion-content-height: 0.5rem;
     --font-bebas: 'Bebas Neue', sans-serif;
@@ -45,50 +45,188 @@
   }
 
   .dark {
-    --background: #000000;
-    --foreground: #fffeff;
-    --card: #181e2b;
-    --card-foreground: #fffeff;
-    --popover: #252d3a;
-    --popover-foreground: #ff00ff;
-    --primary: #ff00ff;
-    --primary-foreground: #000000;
-    --secondary: #00ffff;
-    --secondary-foreground: #000000;
-    --muted: #181e2b;
-    --muted-foreground: #fffeff;
-    --accent: #ff00ff;
-    --accent-foreground: #00ffff;
-    --destructive: #ff0000;
-    --destructive-foreground: #fffeff;
-    --border: #2a2b30;
-    --input: #fffeff;
-    --ring: #ff00ff;
+    --background: rgba(0, 0, 0, 1);
+    --foreground:rgba(255, 254, 255, 1);
+    --card:rgba(24, 30, 43, 1);
+    --card-foreground:rgba(255, 254, 255, 1);
+    --popover:rgba(37, 45, 58, 1);
+    --popover-foreground: rgba(255, 0, 255, 1);
+    --primary: rgba(255, 0, 255, 1);
+    --primary-foreground: rgba(0, 0, 0, 1);
+    --secondary:rgba(0, 255, 255, 1);
+    --secondary-foreground: rgba(0, 0, 0, 1);
+    --muted:rgba(24, 30, 43, 1);
+    --muted-foreground:rgba(255, 254, 255, 1);
+    --accent: rgba(255, 0, 255, 1);
+    --accent-foreground:rgba(0, 255, 255, 1);
+    --destructive: rgba(255, 0, 0, 1);
+    --destructive-foreground:rgba(255, 254, 255, 1);
+    --border:rgba(42, 43, 48, 1);
+    --input:rgba(255, 254, 255, 1);
+    --ring: rgba(255, 0, 255, 1);
     --radius: 0.5rem;
-    --chart-1: #ff00ff;
-    --chart-2: #00ffff;
-    --chart-3: #2a2b30;
-    --chart-4: #fffeff;
-    --chart-5: #000000;
-    --sidebar-background: #181e2b;
-    --sidebar-foreground: #fffeff;
-    --sidebar-primary: #ff00ff;
-    --sidebar-primary-foreground: #000000;
-    --sidebar-accent: #00ffff;
-    --sidebar-accent-foreground: #fffeff;
-    --sidebar-border: #2a2b30;
-    --sidebar-ring: #ff00ff;
+    --chart-1: rgba(255, 0, 255, 1);
+    --chart-2:rgba(0, 255, 255, 1);
+    --chart-3:rgba(42, 43, 48, 1);
+    --chart-4:rgba(255, 254, 255, 1);
+    --chart-5: rgba(0, 0, 0, 1);
+    --sidebar-background:rgba(24, 30, 43, 1);
+    --sidebar-foreground:rgba(255, 254, 255, 1);
+    --sidebar-primary: rgba(255, 0, 255, 1);
+    --sidebar-primary-foreground: rgba(0, 0, 0, 1);
+    --sidebar-accent:rgba(0, 255, 255, 1);
+    --sidebar-accent-foreground:rgba(255, 254, 255, 1);
+    --sidebar-border:rgba(42, 43, 48, 1);
+    --sidebar-ring: rgba(255, 0, 255, 1);
     --gradient: linear-gradient(135deg, var(--accent), var(--accent-foreground));
     --radix-accordion-content-height: 0.5rem;
     --font-bebas: 'Bebas Neue', sans-serif;
     
   }
-}
+  
+/* =====================================================
+ Global Utility Classes
+ ===================================================== */
 
+/* ---------- Layout Utilities ---------- */   
+   
 .bebas-font {
   font-family: var(--font-bebas), sans-serif;
 }
 
 .background-image {
   background-image: url("/branding/Shapes_Black.png");
+}
+
+/* ================================
+   Global Utility Classes
+   ================================ */
+
+/* ----- Main Layout & Container ----- */
+.utility-main {
+  @apply bg-transparent text-primary-foreground mx-auto mt-24 max-w-7xl px-6 pb-16;
+}
+
+/* ----- Page Headers ----- */
+.page-header-container {
+  @apply mb-8 text-center;
+}
+
+.page-title {
+  /* Bigger title with more tracking */
+  @apply tracking-wide;
+}
+.page-subtitle {
+  /* Bigger subtitle with more tracking */
+  @apply mt-2 text-input tracking-wide;
+}
+
+/* ----- Grid Sections ----- */
+.utility-main-section {
+  @apply mb-12;
+}
+.main-grid {
+  @apply grid grid-cols-1 gap-2 md:grid-cols-5;
+}
+
+.utility-secondary-section {
+  @apply mb-12;
+}
+.secondary-section-title {
+  @apply mb-6 tracking-wide text-center text-input;
+}
+.secondary-grid {
+  @apply grid grid-cols-1 gap-6 md:grid-cols-2;
+}
+
+/* ----- Cards (General) ----- */
+.base-card {
+  /* 75% opacity black, medium blur, rounded corners, and flex layout */
+  @apply bg-card backdrop-blur-md rounded-lg flex flex-col h-full;
+}
+
+/* Card content grows to keep footer pinned at bottom */
+.base-card-content {
+  @apply flex-grow;
+}
+
+/* Card Titles & Descriptions */
+.card-title {
+  /* Larger with more tracking */
+  @apply tracking-wide text-primary;
+}
+
+.card-description {
+  @apply text-input tracking-wide;
+}
+
+.card-text {
+  @apply tracking-wide text-secondary;
+}
+
+.card-content {
+  @apply tracking-normal text-input;
+}
+
+/* ----- Buttons ----- */
+.base-button {
+  @apply text-lg rounded-lg  transition-colors duration-200;
+}
+
+.base-button-primary {
+  /* Primary background, secondary text */
+  @apply bg-primary text-secondary w-full;
+}
+.base-button-primary:hover {
+  /* Swap on hover */
+  @apply bg-secondary text-primary;
+}
+
+/* (Alternate example if you want the reverse) */
+.base-button-secondary {
+  @apply bg-secondary text-primary;
+}
+.base-button-secondary:hover {
+  @apply bg-primary text-secondary;
+}
+.base-button-outline {
+  @apply  border-primary text-primary bg-transparent hover:bg-primary hover:text-secondary;
+}
+
+/* Force card buttons to the bottom with uniform spacing */
+.card-footer {
+  @apply mt-auto;
+}
+
+/* ----- Tabs ----- */
+.tabs-root {
+  @apply w-full px-12 flex flex-col items-center;
+}
+.tabs-list {
+  @apply  rounded-lg mb-4;
+}
+.tabs-trigger {
+  @apply rounded-lg text-secondary;
+}
+.tabs-trigger[data-state="active"] {
+  @apply bg-gradient;
+}
+.tabs-content-grid {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-3;
+}
+
+/* ----- Pricing CTA ----- */
+.pricing-cta-container {
+  @apply mt-10 text-center;
+}
+.pricing-cta-text {
+  /* Make CTA text bigger */
+  @apply text-input tracking-wide;
+}
+.pricing-cta-button {
+  /* Add bottom margin/padding */
+  @apply mt-4 mb-8 p-2 bg-primary text-lg rounded-lg border-primary text-input hover:bg-secondary hover:text-primary;
+}
+
+
 }

@@ -53,14 +53,14 @@ export default function Home() {
           <SignInButton>
             <MotionButton
               whileHover={ { scale: 1.1 } }
-              transition={ { type: "spring", stiffness: 300 } } variant="default" className="hover:bg-gradient hover:text-secondary-foreground px-4 py-2 rounded-lg text-lg">LOGIN
+              transition={ { type: "spring", stiffness: 300 } } variant="default" className="text-secondary hover:bg-gradient hover:text-foreground px-4 py-2 rounded-lg text-lg">LOGIN
             </MotionButton>
           </SignInButton>
           <SignUpButton>
             <MotionButton
               whileHover={ { scale: 1.1 } }
               transition={ { type: "spring", stiffness: 300 } }
-              variant="secondary" className="hover:bg-gradient hover:text-foreground px-4 py-2 rounded-lg text-lg">SIGNUP
+              variant="secondary" className="hover:bg-gradient text-primary hover:text-foreground px-4 py-2 rounded-lg text-lg">SIGN UP
             </MotionButton>
           </SignUpButton>
         </div>

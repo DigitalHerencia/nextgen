@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Menu as MenuIcon, X as CloseIcon } from "lucide-react"
 import { motion } from "framer-motion"
+import { SignInButton, SignUpButton } from "@clerk/nextjs"
 
 const Buttons = motion.create( Button );
 
@@ -47,17 +48,17 @@ export default function TopNav() {
         {/* Nav + Auth Actions (Desktop & Mobile) */ }
         <div
           className={ `${ menuOpen ? "block" : "hidden"
-            } fixed top-[62] left-0 w-full z-0 bg-card p-4 md:static md:block md:w-auto md:bg-transparent md:p-0` }
+              } fixed top-[62] left-0 w-full h-full z-0 bg-popover p-4 md:static md:block md:w-auto md:bg-transparent md:p-0` }
         >
-          <nav className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-6">
+            <nav className="flex flex-col items-center space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-6">
             {/* Navigation Menu */ }
             <NavigationMenu>
-              <NavigationMenuList className="flex flex-col space-y-2 md:flex-row md:items-center md:space-y-0 md:space-x-6">
+                <NavigationMenuList className="flex flex-col space-y-4 mt-10 md:mt-0 md:flex-row md:items-center md:space-y-0 md:space-x-6">
                 <NavigationMenuItem>
                   <NavigationMenuLink asChild>
                     <Link
                       href="/"
-                      className="text-input text-base hover:text-primary"
+                        className="text-input text-4xl md:text-base hover:text-primary"
                     >
                       Home
                     </Link>
@@ -68,7 +69,7 @@ export default function TopNav() {
                   <NavigationMenuLink asChild>
                     <Link
                       href="/pricing"
-                      className="text-input text-base hover:text-primary"
+                        className="text-input text-4xl md:text-base hover:text-primary"
                     >
                       Pricing
                     </Link>
@@ -79,7 +80,7 @@ export default function TopNav() {
                   <NavigationMenuLink asChild>
                     <Link
                       href="/services"
-                      className="text-input text-base hover:text-primary"
+                        className="text-input text-4xl md:text-base hover:text-primary"
                     >
                       Services
                     </Link>
@@ -90,15 +91,20 @@ export default function TopNav() {
 
             {/* Auth Actions */ }
             <div className="mt-4 flex items-center space-x-2 md:mt-0">
-              <Buttons
+                <SignInButton>
+                  <Buttons
                 variant="default"
-                className="text-secondary rounded-lg text-lg hover:bg-secondary hover:text-primary"
-              >
-                Login
-              </Buttons>
-              <Buttons className="bg-secondary text-background rounded-lg text-lg hover:bg-primary hover:text-secondary">
-                Sign Up
-              </Buttons>
+                    className="text-secondary rounded-lg text-lg hover:bg-gradient hover:text-input"
+                  >
+                    Login
+                  </Buttons>
+                </SignInButton>
+                <SignUpButton>
+                  <Buttons className="bg-secondary text-primary rounded-lg text-lg hover:bg-gradient hover:text-input"
+                  >
+                    Sign Up
+                  </Buttons>
+                </SignUpButton>
             </div>
           </nav>
         </div>

@@ -1,313 +1,102 @@
 'use client'
 
-{ /* IMPORTS */ }
-
 import React from 'react'
-import { motion } from 'framer-motion'
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { TypographyH1, TypographyP, TypographyH4, TypographyH2 } from '@/components/ui/typography'
+import { TypographyH1, TypographyH2, TypographyH4, TypographyP } from '@/components/ui/typography'
+import { AlternateCard } from '@/components/cards/alernate.card'
+import { MainCard } from '@/components/cards/main.card'
 
-{ /* DEFAULT COMPONENT FUNCTION */ }
-
-export default function RevenueAndToolsPage() {
-  
-  { /* MAIN RETURN */ }
-  
+export default function ServicesPage ()
+{
   return (
-    <div className="bg-transparent text-primary-foreground mx-auto mt-24 max-w-7xl px-6 pb-16">
-      
+    <div className="utility-main">
       {/* PAGE TITLE */}
-      
-      <div className="mb-12 text-center">
-        <TypographyH1 className="text-5xl font-extrabold tracking-wide">
-          <span className='text-secondary'>next-level</span> tools<br />designed to empower <span className='text-secondary'>digital creators</span>  
+      <div className="page-header-container">
+        <TypographyH1 className="page-title">
+          <span className="text-secondary">next-level</span> tools<br />
+          designed to<span className="text-primary"> empower</span> digital creators
         </TypographyH1>
-        <TypographyH4 className="mt-4 text-secondary tracking-wide">
+        <TypographyH4 className="page-subtitle">
           Explore more ways to monetize your content and leverage cutting-edge tools to streamline your workflow.
         </TypographyH4>
       </div>
 
       {/* TOOLS SECTION */}
-      
-      <section className="mb-12">
-                <div className="grid grid-cols-1 gap-2 md:grid-cols-5">
-      
-          {/* Tool 1: ScoutHub */}
-      
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg h-full">
-              <CardHeader>
-                <CardTitle className="font-bold text-primary">
-                  <TypographyH2>Scout<span className='text-secondary'>Hub</span></TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Discover Hidden Gems
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Discover top talent: ScoutHub enables you to find the best emerging creators from niche and underserved markets.
-                  <br />
-                  Data-driven outreach: Advanced algorithms and local engagement strategies ensure you connect with high-potential talent.
-                  <br />
-                  Curated talent pool: We identify creators ready to take the next step in their career.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="fixed-bottom w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Unlock ScoutHub
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+      <section className="utility-main-section">
+        <div className="main-grid">
+          <AlternateCard
+            titleWords={ [ "Scout", "Hub" ] }
+            subtitle="Discover Hidden Gems"
+            content="Discover top talent: ScoutHub enables you to find the best emerging creators from niche and underserved markets. Data-driven outreach: Advanced algorithms and local engagement strategies ensure you connect with high-potential talent. Curated talent pool: We identify creators ready to take the next step in their career."
+            buttonText="Unlock ScoutHub"
+          />
 
-          {/* Tool 2: OnboardPro */}
-      
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg h-full">
-              <CardHeader>
-                <CardTitle className="font-bold text-primary">
-                <TypographyH2>Onboard<span className='text-secondary'>Pro</span></TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Seamless Onboarding
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Smooth start: Simplify onboarding with clear contract structures and personalized strategy sessions.
-                  <br />
-                  Tools for success: Creators get the resources they need from day one, including branding audits and content guides.
-                  <br />
-                  Maximize efficiency: Get creators up to speed quickly to minimize downtime.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full text-lg mt-5 bg-secondary text-background hover:bg-primary rounded-lg">
-                  Get Started
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <AlternateCard
+            titleWords={ [ "Onboard", "Pro" ] }
+            subtitle="Seamless Onboarding"
+            content="Smooth start: Simplify onboarding with clear contract structures and personalized strategy sessions. Tools for success: Creators get the resources they need from day one, including branding audits and content guides. Maximize efficiency: Get creators up to speed quickly to minimize downtime."
+            buttonText="Get Started"
+          />
 
-          {/* Tool 3: CreateFlow */}
-          
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg h-full">
-              <CardHeader>
-                <CardTitle className="font-bold text-primary">
-                <TypographyH2>Create<span className='text-secondary'>Flow</span></TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Streamlined Creation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Efficiency at your fingertips: Our drag-and-drop scheduling UI makes managing content production effortless.
-                  <br />
-                  Professional editing: Integrated tools help polish your work to perfection.
-                  <br />
-                  Analytics for improvement: Track performance to refine strategies and boost engagement.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full mt-5 text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Try CreateFlow
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <AlternateCard
+            titleWords={ [ "Create", "Flow" ] }
+            subtitle="Streamlined Creation"
+            content="Efficiency at your fingertips: Our drag-and-drop scheduling UI makes managing content production effortless. Professional editing: Integrated tools help polish your work to perfection. Analytics for improvement: Track performance to refine strategies and boost engagement."
+            buttonText="Try CreateFlow"
+          />
 
-          {/* Tool 4: EngageMax */}
-          
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg h-full">
-              <CardHeader>
-                <CardTitle className="font-bold text-primary">
-                <TypographyH2>Engage<span className='text-secondary'>Max</span></TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Deepen Fan Connections
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Foster loyalty: Manage custom fan requests, direct messages, and live interactions.
-                  <br />
-                  Track engagement: Use advanced metrics to understand fan preferences.
-                  <br />
-                  Boost monetization: Increase revenue through deeper fan connections and custom content opportunities.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full mt-10 text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Engage Now
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <AlternateCard
+            titleWords={ [ "Engage", "Max" ] }
+            subtitle="Deepen Fan Connections"
+            content="Foster loyalty: Manage custom fan requests, direct messages, and live interactions. Track engagement: Use advanced metrics to understand fan preferences. Boost monetization: Increase revenue through deeper fan connections and custom content opportunities."
+            buttonText="Engage Now"
+          />
 
-          {/* Tool 5: SocialBoost */}
-          
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg h-full">
-              <CardHeader>
-                <CardTitle className="font-bold text-primary">
-                <TypographyH2>Social<span className='text-secondary'>Boost</span></TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Elevate Your Presence
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Custom social audits: Optimize your online presence and grow your audience.
-                  <br />
-                  Cross-platform strategies: Tailored for Instagram, Reddit, and Twitter to maximize engagement.
-                  <br />
-                  Results-driven growth: Data-driven insights to bring more eyes to your content.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full mt-3 text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Boost Social
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <AlternateCard
+            titleWords={ [ "Social", "Boost" ] }
+            subtitle="Elevate Your Presence"
+            content="Custom social audits: Optimize your online presence and grow your audience. Cross-platform strategies: Tailored for Instagram, Reddit, and Twitter to maximize engagement. Results-driven growth: Data-driven insights to bring more eyes to your content."
+            buttonText="Boost Social"
+          />
         </div>
       </section>
 
       {/* ADD-ONS SECTION */}
-    
-      <section className="mb-12">
-        <TypographyH1 className="mb-6 text-4xl font-bold tracking-wide text-center text-input">
-        Additional Revenue & Tools
+      <section className="utility-secondary-section">
+        <TypographyH1 className="secondary-section-title">
+          Additional Revenue & Tools
         </TypographyH1>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        
-          {/* Add-on 1: Content Creation */}
-        
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center font-bold">
-                  <TypographyH2 className="tracking-wide text-primary">Content Creation</TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Video Editing, Graphic Design, and Photography
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  High-Quality Content: Professional video editing, stunning photography, and eye-catching graphic design.
-                  <br />
-                  Tailored Packages: Customized packages starting at $500/project to elevate your brand.
-                  <br />
-                  Enhancing Brand Presence: Ensure your materials are polished and appealing.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Learn More
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+        <div className="secondary-grid">
+          <MainCard
+            titlePart1="Content "
+            titlePart2="Creation"
+            subtitle="Video Editing, Graphic Design, and Photography"
+            content="High-Quality Content: Professional video editing, stunning photography, and eye-catching graphic design. Tailored Packages: Customized packages starting at $500/project to elevate your brand. Enhancing Brand Presence: Ensure your materials are polished and appealing."
+            buttonText="Learn More"
+          />
 
-          {/* Add-on 2: Social Media Campaigns */}
-          
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center font-bold text-secondary">
-                  <TypographyH2 className="tracking-wide text-primary">Social Media Campaigns</TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Paid Ad Management (Instagram, Reddit)
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Social Media Mastery: Targeted campaigns designed to drive traffic and boost engagement.
-                  <br />
-                  Targeted Campaigns: Using demographic and interest-based strategies.
-                  <br />
-                  Affordable Pricing: Starting at just $100/month.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full mt-4 text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Learn More
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <MainCard
+            titlePart1="Social Media"
+            titlePart2=" Campaigns"
+            subtitle="Paid Ad Management (Instagram, Reddit)"
+            content="Social Media Mastery: Targeted campaigns designed to drive traffic and boost engagement. Targeted Campaigns: Using demographic and interest-based strategies. Affordable Pricing: Starting at just $100/month."
+            buttonText="Learn More"
+          />
 
-          {/* Add-on 3: Brand Partnerships */}
-        
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center font-bold text-secondary">
-                  <TypographyH2 className="tracking-wide text-primary">Brand Partnerships</TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  Commission-Based Revenue Model
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Strategic Partnerships: Connect with top brands for lucrative sponsorship opportunities.
-                  <br />
-                  Revenue Model: Commission-based to ensure mutual success.
-                  <br />
-                  Exclusive Deals: Access exclusive sponsorship deals tailored to your brand.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Learn More
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <MainCard
+            titlePart1="Brand"
+            titlePart2=" Partnerships"
+            subtitle="Commission-Based Revenue Model"
+            content="Strategic Partnerships: Connect with top brands for lucrative sponsorship opportunities. Revenue Model: Commission-based to ensure mutual success. Exclusive Deals: Access exclusive sponsorship deals tailored to your brand."
+            buttonText="Learn More"
+          />
 
-          {/* Add-on 4: Revenue Sharing */}
-          
-          <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-black/50 backdrop-blur-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center font-bold text-secondary">
-                  <TypographyH2 className="tracking-wide text-primary">Revenue Sharing</TypographyH2>
-                </CardTitle>
-                <CardDescription className="text-secondary text-xl">
-                  20%-30% Cut of Creator Earnings
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TypographyP className="text-base text-input">
-                  Comprehensive Management: Full-service support covering content strategy, marketing, fan engagement, and administrative tasks.
-                  <br />
-                  Strategic Support: Our success is tied to your performance.
-                </TypographyP>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full text-lg bg-secondary text-background hover:bg-primary rounded-lg">
-                  Learn More
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+          <MainCard
+            titlePart1="Revenue"
+            titlePart2=" Sharing"
+            subtitle="20%-30% Cut of Creator Earnings"
+            content="Comprehensive Management: Full-service support covering content strategy, marketing, fan engagement, and administrative tasks. Strategic Support: Our success is tied to your performance."
+            buttonText="Learn More"
+          />
         </div>
       </section>
     </div>
