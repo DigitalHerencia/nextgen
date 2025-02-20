@@ -24,7 +24,7 @@ interface Talent {
 // Talent Card Component
 export function TalentCard({ talent }: { talent: Talent }) {
   return (
-    <Card className="p-4 text-input bg-transparent">
+    <Card className="p-4 text-input bg-card">
       <CardHeader className="flex items-center gap-4">
         <Image src={talent.avatar} alt={talent.name} width={80} height={80} className="rounded-full border-2 border-primary" />
         <div>

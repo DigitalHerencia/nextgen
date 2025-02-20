@@ -1,26 +1,77 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {  TypographyH4 } from "@/components/ui/typography";
+"use client";
+
+import { motion } from "framer-motion";
+import
+  {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+    CardFooter,
+  } from "@/components/ui/card";
+import { TypographyH2, TypographyH4, TypographyP, TypographyLarge } from "@/components/ui/typography";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 
 interface Content {
-  id: number;
-  type: string;
-  engagement: string;
-  campaign: string;
+  _id: string;
+  talent: string; // For display purposes (assumed resolved)
+  type: "video" | "photo" | "audio" | "text";
+  engagement: number;
+  campaign: string; // For display purposes (assumed resolved)
+  fileUrl?: string;
+  description?: string;
+  createdBy: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export function ContentCard({ content }: { content: Content }) {
-    return (
-      <Card className="p-4 text-input bg-transparent">
-
-
+export function ContentCard ( { content, onClick }: { content: Content; onClick?: () => void } )
+{
+  return (
+    <motion.div whileHover={ { scale: 1.03 } } transition={ { duration: 0.3 } }>
+      <Card className="base-card">
         <CardHeader>
-          <TypographyH4 className="font-bold">Content #{content.id}</TypographyH4>
+          <CardTitle>
+            <TypographyH2 className="card-title">
+              <span className="text-primary">{ content.type.toUpperCase() }</span>{ " " }
+              <span className="text-secondary">Content</span>
+            </TypographyH2>
+          </CardTitle>
+          <Separator className="my-2 border-b" />
+          <CardDescription>
+            <TypographyH4 className="card-description">
+              Engagement: { content.engagement }
+            </TypographyH4>
+          </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-2">
-          <p className="text-sm"><strong>Type:</strong> {content.type}</p>
-          <p className="text-sm"><strong>Engagement:</strong> {content.engagement}</p>
-          <p className="text-sm"><strong>Associated Campaign:</strong> {content.campaign}</p>
+        <CardContent className="base-card-content">
+          <TypographyP className="card-content">
+            <strong>Talent ID:</strong> { content.talent }
+          </TypographyP>
+          <TypographyP className="card-content">
+            <strong>Campaign ID:</strong> { content.campaign }
+          </TypographyP>
+          { content.description && (
+            <TypographyP className="card-content">
+              <strong>Description:</strong> { content.description }
+            </TypographyP>
+          ) }
+          { content.fileUrl && (
+            <TypographyP className="card-content">
+              <strong>File URL:</strong> { content.fileUrl }
+            </TypographyP>
+          ) }
         </CardContent>
+        <CardFooter className="card-footer">
+          <Button onClick={ onClick } className="base-button-primary">
+            <TypographyLarge className="base-button">
+              View Content
+            </TypographyLarge>
+          </Button>
+        </CardFooter>
       </Card>
-    );
-  }
+    </motion.div>
+  );
+}

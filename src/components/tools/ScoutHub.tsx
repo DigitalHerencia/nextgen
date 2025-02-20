@@ -1,74 +1,99 @@
 "use client";
 
-{/* IMPORTS */ }
+import { TalentCard } from "@/components/cards/talent.card";
+import { TypographyH1 } from "../ui/typography";
 
-import Image from "next/image";
-import { FileVideo, Heart, Newspaper } from "lucide-react";
-import "@/app/globals.css";
-
-{/* SIMULATED DATA */ }
-
-const talent = {
-  name: `Kazzandra`,
-  category: `Influencer`,
-  avatar: `/talent/Kazzandra_Avatar.jpg`,
-  earnings: 10000,
-  social_links: {
-    instagram: true,
-    twitter: false,
+const talentList = [
+  {
+    name: "Carla",
+    category: "Model",
+    avatar: "/talent/Carla_Avatar.jpg",
+    bio: "A rising star in the modeling industry.",
+    earnings: 15000,
+    agent: "Agent X",
+    talentManager: "Manager A",
+    social_links: {
+      instagram: "https://instagram.com/carla",
+      twitter: "https://twitter.com/carla",
+    },
   },
-  talentManager: `Alex Morgan`,
-};
-
-{/* DEFAULT FUNCTION COMPONENT */ }
+  {
+    name: "Goji",
+    category: "Musician",
+    avatar: "/talent/Goji_Avatar.jpg",
+    bio: "A talented musician redefining hip-hop.",
+    earnings: 20000,
+    agent: "Agent Y",
+    talentManager: "Manager B",
+    social_links: {
+      instagram: "https://instagram.com/goji",
+      twitter: "https://twitter.com/goji",
+    },
+  },
+  {
+    name: "Juan",
+    category: "Actor",
+    avatar: "/talent/Juan_Avatar.jpg",
+    bio: "Award-winning actor with a growing fanbase.",
+    earnings: 18000,
+    agent: "Agent Z",
+    talentManager: "Manager C",
+    social_links: {
+      instagram: "https://instagram.com/juan",
+      twitter: "https://twitter.com/juan",
+    },
+  },
+  {
+    name: "Kazzandra",
+    category: "Influencer",
+    avatar: "/talent/Kazzandra_Avatar.jpg",
+    bio: "Fashion influencer and digital creator.",
+    earnings: 12000,
+    agent: "Agent M",
+    talentManager: "Manager D",
+    social_links: {
+      instagram: "https://instagram.com/kazzandra",
+      twitter: "https://twitter.com/kazzandra",
+    },
+  },
+  {
+    name: "Regina",
+    category: "Fitness Coach",
+    avatar: "/talent/Regina_Avatar.jpg",
+    bio: "Leading fitness coach empowering people daily.",
+    earnings: 25000,
+    agent: "Agent N",
+    talentManager: "Manager E",
+    social_links: {
+      instagram: "https://instagram.com/regina",
+      twitter: "https://twitter.com/regina",
+    },
+  },
+  {
+    name: "Scarlett",
+    category: "Photographer",
+    avatar: "/talent/Scarlett_Avatar.jpg",
+    bio: "Capturing moments that last forever.",
+    earnings: 14000,
+    agent: "Agent O",
+    talentManager: "Manager F",
+    social_links: {
+      instagram: "https://instagram.com/scarlett",
+      twitter: "https://twitter.com/scarlett",
+    },
+  },
+];
 
 export default function ScoutHub ()
 {
-
-  {/* MAIN RETURN */ }
-
   return (
-    <main className="flex-1 p-8 overflow-y-auto">
-
-      {/* TALENT CARD */ }
-
-      <div className="w-full flex items-center bg-sidebar rounded-lg shadow-lg p-6">
-        <Image
-          src={ talent.avatar || "/talent/Goji_Avatar.jpg" }
-          alt={ `${ talent.name } Profile` }
-          width={ 208 }
-          height={ 208 }
-          className="rounded-lg shadow-lg"
-        />
-
-
-
-        <div className="ml-6 w-full">
-          <div className="flex flex-col items-center">
-            <p className="text-lg font-bold text-foreground">{ talent.name }</p>
-            <p className="text-primary text-sm">{ talent.category }</p>
-          </div>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4 text-sidebar text-sm text-center">
-            <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-              <FileVideo size={ 20 } />
-              <span>Earnings: ${ talent.earnings }</span>
-            </div>
-            <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-              <Heart size={ 20 } />
-              <span>{ talent.social_links?.instagram ? "Instagram Linked" : "No IG" }</span>
-            </div>
-            <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-              <FileVideo size={ 20 } />
-              <span>{ talent.social_links?.twitter ? "Twitter Linked" : "No Twitter" }</span>
-            </div>
-            <div className="flex flex-col items-center bg-hover p-3 rounded-lg">
-              <Newspaper size={ 20 } />
-              <span>Manager: { talent.talentManager || "N/A" }</span>
-            </div>
-          </div>
-        </div>
+    <main className="flex-1 p-8 overflow-y-auto max-h-[80vh] pb-16">
+      <TypographyH1 className="text-input card-title">ScoutHub: Talent Discovery</TypographyH1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6   p-4">
+        { talentList.map( ( talent, index ) => (
+          <TalentCard key={ index } talent={ talent } />
+        ) ) }
       </div>
     </main>
   );
-};
-
+}
